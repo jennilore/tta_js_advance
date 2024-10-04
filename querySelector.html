@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+    <style>
+        h1 {
+            color: aqua;
+        }
+        #mybutton1 {
+            color: aliceblue;
+            background-color: darkgray;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <p>this is a simple paragraph</p>
+    <button id="mybutton1">click</button>
+
+    <script>
+        const heading = document.querySelector('h1');
+        const paragraph = document.querySelector('p');
+        const button = document.querySelector('button');
+        paragraph.style.color = "darkblue"
+        console.log(heading);
+        paragraph.textContent = 'this is a new paragraph';
+        console.log(heading);
+
+        button.addEventListener('click', function() {
+            alert('button is clicked');
+            paragraph.style.color = "red";
+            paragraph.textContent = "button is clicked";
+            heading.style,color ='darkblue';
+        })
+    </script>
+</body>
+</html>
