@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <div class="contsiner bg-gray-300 p-3 flex flex-col w-1/3 shadow-lg m-auto my-6">
+    <div class="contsiner bg-gray-300 p-3 flex flex-col lg:w-1/3 shadow-lg m-auto my-6">
         <p class="font-semibold text-lg text-center py-2">Elements on the to do list</p>
         <ul class="list-disc text-center pl-5" id="taskDisplay"></ul>
     </div>
@@ -15,12 +15,12 @@
 
 
     <script>
-        let task = ["Buy milk", "clean the room", "go to the gym"];
+        let tasks = ["Buy milk", "clean the room", "go to the gym"];
 
-        const taskDisplay = () => {
+        const displayTasks = () => {
             let taskDisplay = document.querySelector("#taskDisplay");
             taskDisplay.innerHTML = '';
-            task.forEach ((task, index) => {
+            tasks.forEach ((task, index) => {
                 const taskItems = document.createElement('li');
                 taskItems.classList.add("bg-blue-200",'p-2', 'm-2','rounded-lg','decoration-none','list-none');
                 taskItems.textContent = task;
@@ -28,7 +28,15 @@
             })
         }
 
-        taskDisplay();
+        const addtask = (task) =>{
+            tasks.push(task);
+            console.log(`successfully added ${task} to the list`);
+            alert(`successfully added ${task} to the list`);
+            displayTasks();
+        }
+
+        displayTasks();
+        addtask('buy bread');
     </script>
 </body>
 </html>
